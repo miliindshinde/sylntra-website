@@ -1,0 +1,60 @@
+/* ============================================================
+   Sylntra — Typography tokens
+   Two faces carry the whole system:
+     • Display sans (Inter sub for "The Future") — narrative, weight 400/500,
+       negative tracking. Never bold (700+). Headlines stay sentence-case.
+     • Mono (JetBrains Mono sub for "PP Neue Montreal Mono") — UPPERCASE labels,
+       positive tracking. Labels only, never paragraphs.
+   ============================================================ */
+
+:root {
+  /* --- Families --------------------------------------------- */
+  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* --- Weights ---------------------------------------------- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+
+  /* --- Display sans scale (size / line-height / tracking) ---- */
+  --display-xxl-size: 64px;   --display-xxl-line: 70.4px;  --display-xxl-track: -1.92px;
+  --display-xl-size: 40px;    --display-xl-line: 48px;     --display-xl-track: -0.8px;
+  --display-lg-size: 28px;    --display-lg-line: 32.2px;   --display-lg-track: -0.42px;
+  --display-md-size: 22px;    --display-md-line: 25.3px;   --display-md-track: -0.22px;
+
+  --body-lg-size: 18px;       --body-lg-line: 23.4px;      --body-lg-track: -0.18px;
+  --body-md-size: 16px;       --body-md-line: 20.8px;      --body-md-track: -0.16px;
+  --caption-size: 14px;       --caption-line: 19.6px;      --caption-track: 0px;
+
+  /* --- Mono scale ------------------------------------------- */
+  --mono-button-size: 16px;   --mono-button-line: 16px;    --mono-button-track: 0.08px;
+  --mono-eyebrow-size: 11px;  --mono-eyebrow-line: 11px;   --mono-eyebrow-track: 0.55px;
+  --mono-label-size: 11px;    --mono-label-line: 15.4px;   --mono-label-track: 0.055px;
+  --mono-caption-size: 10px;  --mono-caption-line: 14px;   --mono-caption-track: 0.05px;
+}
+
+/* ---- Optional utility classes (handy for cards & kits) ----- */
+.t-display-xxl { font-family: var(--font-display); font-weight: var(--weight-medium);
+  font-size: var(--display-xxl-size); line-height: var(--display-xxl-line); letter-spacing: var(--display-xxl-track); }
+.t-display-xl { font-family: var(--font-display); font-weight: var(--weight-medium);
+  font-size: var(--display-xl-size); line-height: var(--display-xl-line); letter-spacing: var(--display-xl-track); }
+.t-display-lg { font-family: var(--font-display); font-weight: var(--weight-medium);
+  font-size: var(--display-lg-size); line-height: var(--display-lg-line); letter-spacing: var(--display-lg-track); }
+.t-display-md { font-family: var(--font-display); font-weight: var(--weight-medium);
+  font-size: var(--display-md-size); line-height: var(--display-md-line); letter-spacing: var(--display-md-track); }
+
+.t-body-lg { font-family: var(--font-display); font-weight: var(--weight-regular);
+  font-size: var(--body-lg-size); line-height: var(--body-lg-line); letter-spacing: var(--body-lg-track); }
+.t-body-md { font-family: var(--font-display); font-weight: var(--weight-regular);
+  font-size: var(--body-md-size); line-height: var(--body-md-line); letter-spacing: var(--body-md-track); }
+.t-caption { font-family: var(--font-display); font-weight: var(--weight-regular);
+  font-size: var(--caption-size); line-height: var(--caption-line); letter-spacing: var(--caption-track); }
+
+.t-mono-button { font-family: var(--font-mono); font-weight: var(--weight-medium); text-transform: uppercase;
+  font-size: var(--mono-button-size); line-height: var(--mono-button-line); letter-spacing: var(--mono-button-track); }
+.t-mono-eyebrow { font-family: var(--font-mono); font-weight: var(--weight-medium); text-transform: uppercase;
+  font-size: var(--mono-eyebrow-size); line-height: var(--mono-eyebrow-line); letter-spacing: var(--mono-eyebrow-track); }
+.t-mono-label { font-family: var(--font-mono); font-weight: var(--weight-medium); text-transform: uppercase;
+  font-size: var(--mono-label-size); line-height: var(--mono-label-line); letter-spacing: var(--mono-label-track); }
+.t-mono-caption { font-family: var(--font-mono); font-weight: var(--weight-regular);
+  font-size: var(--mono-caption-size); line-height: var(--mono-caption-line); letter-spacing: var(--mono-caption-track); }

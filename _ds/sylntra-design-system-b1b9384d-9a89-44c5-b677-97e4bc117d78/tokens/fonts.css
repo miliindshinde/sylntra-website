@@ -1,0 +1,13 @@
+/* ============================================================
+   Sylntra — Webfonts
+   ------------------------------------------------------------
+   The two primary faces are PROPRIETARY:
+     • Display sans  : "The Future"            (geometric display sans)
+     • Mono eyebrow  : "PP Neue Montreal Mono" (uppercase technical mono)
+   Open-source substitutes are loaded below and flagged in the readme.
+     • Inter         → stand-in for "The Future"
+     • JetBrains Mono→ stand-in for "PP Neue Montreal Mono"
+   Replace these with the licensed faces when available.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');

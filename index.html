@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sylntra — Building Intelligent Business Systems</title>
+<meta name="description" content="Sylntra helps busy business owners save time, win clients and run leaner with websites, automation and intelligent business systems. Better systems — not more software.">
+<link rel="stylesheet" href="_ds/sylntra-design-system-b1b9384d-9a89-44c5-b677-97e4bc117d78/styles.css">
+<link rel="stylesheet" href="lib/site.css">
+</head>
+<body>
+<div id="root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="_ds/sylntra-design-system-b1b9384d-9a89-44c5-b677-97e4bc117d78/_ds_bundle.js"></script>
+<script src="lib/image-slot.js"></script>
+<script type="text/babel" src="lib/shared.jsx"></script>
+<script type="text/babel" src="lib/tweaks-panel.jsx"></script>
+<script type="text/babel" src="home1.jsx"></script>
+<script type="text/babel" src="home2.jsx"></script>
+<script type="text/babel">
+  const { h, SiteHeader, SiteFooter, ChatOrb } = window.SS;
+  const H = window.HOME;
+  const { useTweaks, TweaksPanel, TweakSection, TweakRadio } = window;
+  const TWEAK_DEFAULTS = {"accent":"vivid","density":"comfortable","motion":"on"};
+  function App() {
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    React.useEffect(() => {
+      const b = document.body;
+      b.classList.toggle('accent-vivid', t.accent === 'vivid');
+      b.classList.toggle('accent-subtle', t.accent === 'subtle');
+      b.classList.toggle('density-compact', t.density === 'compact');
+      b.classList.toggle('motion-off', t.motion === 'off');
+    }, [t.accent, t.density, t.motion]);
+    return h(React.Fragment, null,
+      h(SiteHeader, { active: 'Home' }),
+      h('main', null,
+        h(H.Hero), h(H.LogoStrip), h(H.Pains), h(H.WhyFail), h(H.Approach),
+        h(H.Services), h(H.Industries), h(H.Process), h(H.CaseStudies),
+        h(H.Testimonials), h(H.Stats), h(H.WhyChoose), h(H.FAQ), h(H.FinalCTA)),
+      h(SiteFooter),
+      h(ChatOrb),
+      h(TweaksPanel, null,
+        h(TweakSection, { label: 'Brand atmosphere' }),
+        h(TweakRadio, { label: 'Gradient glow', value: t.accent, options: ['subtle', 'vivid'], onChange: (v) => setTweak('accent', v) }),
+        h(TweakSection, { label: 'Layout' }),
+        h(TweakRadio, { label: 'Density', value: t.density, options: ['comfortable', 'compact'], onChange: (v) => setTweak('density', v) }),
+        h(TweakSection, { label: 'Motion' }),
+        h(TweakRadio, { label: 'Scroll reveals', value: t.motion, options: ['on', 'off'], onChange: (v) => setTweak('motion', v) })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>
+</body>
+</html>

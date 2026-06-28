@@ -1,0 +1,21 @@
+/* ============================================================
+   Sylntra — Radius & Elevation tokens
+   Radius: 4px is canonical. Full-pill reserved for the chat orb.
+   Elevation: hairlines + surface contrast carry depth, not shadow.
+   The only soft shadow belongs to the floating chat orb.
+   ============================================================ */
+
+:root {
+  /* --- Border radius ---------------------------------------- */
+  --radius-none: 0px;     /* full-bleed bands, wordmark banner            */
+  --radius-xs: 3.25px;    /* pricing sub-tabs, outline button            */
+  --radius-sm: 4px;       /* CANONICAL — buttons, badges, cards, rows    */
+  --radius-md: 8px;       /* feature-tab pills, larger tab containers    */
+  --radius-full: 9999px;  /* the floating chat-launcher orb ONLY         */
+
+  /* --- Elevation -------------------------------------------- */
+  --elevation-flat: none;
+  --border-hairline: 1px solid var(--color-hairline);          /* L1 on light */
+  --border-hairline-dark: 1px solid var(--color-divider-dark); /* L2 on dark  */
+  --shadow-soft: rgba(1, 1, 32, 0.1) 0px 4px 10px 0px;         /* L3 — orb    */
+}

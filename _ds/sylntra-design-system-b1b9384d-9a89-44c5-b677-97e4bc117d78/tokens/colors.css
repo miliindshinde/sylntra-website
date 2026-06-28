@@ -1,0 +1,37 @@
+/* ============================================================
+   Sylntra — Color tokens
+   Dual-surface system: no in-between greys. Dark navy <-> white.
+   The three-stop brand gradient is the only decorative chrome.
+   ============================================================ */
+
+:root {
+  /* --- Brand & accent --------------------------------------- */
+  --color-primary: #000000;          /* Ink Black — the single primary CTA color   */
+  --color-on-primary: #ffffff;       /* text on the black pill                      */
+
+  --color-accent-orange: #fc4c02;    /* gradient leg 1 — never a UI fill alone      */
+  --color-accent-magenta: #ef2cc1;   /* gradient leg 2                              */
+  --color-accent-periwinkle: #bdbbff;/* gradient leg 3 — also soft stat-tile fill   */
+  --color-accent-mint: #c8f6f9;      /* pastel cyan — hero 2nd CTA + tinted tiles   */
+  --color-accent-peach: #ffe0d1;     /* sibling tint for stat tiles (mint family)   */
+
+  /* --- Surface ---------------------------------------------- */
+  --color-canvas: #ffffff;           /* default product / pricing / docs background */
+  --color-canvas-dark: #010120;      /* dark hero / research surface                */
+  --color-hairline: #ebebeb;         /* the single soft surface: table headers,
+                                         toggle rails, 1px dividers on light         */
+  --color-surface-dark-soft: #313641;/* lighter dark fill inside dark-band cards     */
+  --color-divider-dark: #26263a;     /* 1px dividers / badge bg on dark surfaces      */
+
+  /* --- Text ------------------------------------------------- */
+  --color-ink: #000000;              /* every heading + body on light surfaces      */
+  --color-body: #999999;             /* secondary text, captions, mono eyebrows     */
+  --color-on-dark: #ffffff;          /* all text on dark surfaces                    */
+
+  /* --- Brand gradient (fixed object — never reorder/crop) ---- */
+  --gradient-brand: linear-gradient(
+      135deg,
+      var(--color-accent-orange) 0%,
+      var(--color-accent-magenta) 52%,
+      var(--color-accent-periwinkle) 100%);
+}

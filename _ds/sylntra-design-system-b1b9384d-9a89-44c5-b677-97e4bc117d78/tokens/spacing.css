@@ -1,0 +1,25 @@
+/* ============================================================
+   Sylntra — Spacing tokens
+   Base unit 4px. Surface contrast does most of the separation;
+   sections breathe at 80px, data tables stay tight at 12px.
+   ============================================================ */
+
+:root {
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 32px;
+  --space-4xl: 44px;
+  --space-5xl: 48px;
+  --space-6xl: 55.2px;   /* gap-multiplier derivative */
+  --space-section: 80px; /* marketing band top/bottom rhythm */
+
+  /* --- Layout ----------------------------------------------- */
+  --container-max: 1280px;
+  --gutter-desktop: 32px;
+  --gutter-mobile: 16px;
+}
