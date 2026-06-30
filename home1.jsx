@@ -34,7 +34,7 @@
                 h(Button, { variant: 'ghost-on-dark', href: 'services.html' }, 'Explore services'))),
             h(Reveal, { delay: 320 },
               h('div', { style: { display: 'flex', gap: 'var(--space-3xl)', marginTop: 52, flexWrap: 'wrap' } },
-                [['10+ yrs', 'Operating experience'], ['5\u2013day', 'Avg. first system live'], ['100%', 'Outcome-focused']].map((s) =>
+                [['12+ yrs', 'Operating experience'], ['15 days', 'Avg. first system live'], ['100%', 'Outcome-focused']].map((s) =>
                   h('div', { key: s[0] },
                     h('div', { style: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 24, letterSpacing: '-0.02em' } }, s[0]),
                     h('div', { className: 'mono-eyebrow on-dark', style: { marginTop: 6 } }, s[1])))))),
