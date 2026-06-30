@@ -137,10 +137,10 @@
   }
 
   /* ---- Image slot wrapper --------------------------------- */
-  function ImageSlot({ id, placeholder = 'Drop an image', shape = 'rounded', radius = 8, ratio, src, className = '', style = {} }) {
+  function ImageSlot({ id, placeholder = 'Drop an image', shape = 'rounded', radius = 8, ratio, fit, src, className = '', style = {} }) {
     const st = { width: '100%', ...style };
     if (ratio) st.aspectRatio = ratio;
-    return h('image-slot', { id, placeholder, shape, radius: String(radius), src, class: className, style: st });
+    return h('image-slot', { id, placeholder, shape, radius: String(radius), fit, src, class: className, style: st });
   }
 
   /* ---- Header --------------------------------------------- */

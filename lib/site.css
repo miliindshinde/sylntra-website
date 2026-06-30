@@ -176,6 +176,7 @@ body.motion-off .reveal, body.motion-off .reveal-scale { opacity: 1 !important; 
 @media (max-width: 960px) {
   .hero-grid, .grid-collapse { grid-template-columns: 1fr !important; }
   .process-row { grid-template-columns: 1fr !important; gap: var(--space-lg) !important; }
+  .slot-dark image-slot { max-height: 70vh; }
 }
 @media (max-width: 880px) {
   .nav-links, .nav-actions .nav-cta-desktop, .nav-actions .nav-secondary { display: none; }

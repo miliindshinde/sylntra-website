@@ -16,7 +16,7 @@
         position: 'absolute', top: '-30%', right: '-10%', width: '60vw', height: '60vw',
         background: 'var(--gradient-brand)', filter: 'blur(140px)', opacity: 0.28, borderRadius: '50%', pointerEvents: 'none' } }),
       h('div', { className: 'container', style: { position: 'relative', paddingBottom: 'var(--space-section)' } },
-        h('div', { style: { display: 'grid', gridTemplateColumns: 'minmax(0,1.15fr) minmax(0,0.85fr)', gap: 'var(--space-5xl)', alignItems: 'center' }, className: 'hero-grid' },
+        h('div', { style: { display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 'var(--space-5xl)', alignItems: 'center' }, className: 'hero-grid' },
           h('div', null,
             h(Reveal, null,
               h('div', { style: { display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 12px', border: '1px solid var(--color-divider-dark)', borderRadius: 'var(--radius-sm)', marginBottom: 24 } },
@@ -41,14 +41,19 @@
           // visual
           h(Reveal, { variant: 'reveal-scale', delay: 200, className: 'slot-dark' },
             h('div', { style: { position: 'relative' } },
-              h(ImageSlot, { id: 'home-hero', placeholder: 'Drop a hero image \u2014 team / workspace', ratio: '4 / 5', radius: 10,
-                style: { border: '1px solid var(--color-divider-dark)' } }),
-              h('div', { style: { position: 'absolute', bottom: 18, left: -18, right: 28, background: 'var(--color-canvas)', color: 'var(--color-ink)',
-                border: '1px solid var(--color-hairline)', borderRadius: 'var(--radius-sm)', padding: '16px 18px', display: 'flex', alignItems: 'center', gap: 14, boxShadow: 'rgba(1,1,32,.18) 0 18px 40px' } },
-                h('span', { style: { width: 40, height: 40, borderRadius: 'var(--radius-sm)', background: 'var(--gradient-brand)', flex: '0 0 auto' } }),
-                h('div', null,
-                  h('div', { style: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 16 } }, '14 hrs / week saved'),
-                  h('div', { className: 'mono-eyebrow' }, 'After workflow automation'))))))));
+              // brand glow behind portrait \u2014 consistent with existing hero atmosphere language
+              h('div', { 'aria-hidden': true, style: {
+                position: 'absolute', inset: '-10%', background: 'var(--gradient-brand)',
+                filter: 'blur(80px)', opacity: 0.13, borderRadius: '50%', pointerEvents: 'none' } }),
+              h('div', { style: { display: 'flex', flexDirection: 'column', gap: 'var(--space-lg)', position: 'relative' } },
+                h(ImageSlot, { id: 'home-hero', placeholder: 'Drop a hero image \u2014 team / workspace', ratio: '3 / 4', radius: 10,
+                  fit: 'contain', src: 'assets/images/founder/milind-shinde.webp' }),
+                h('div', { style: { background: 'var(--color-canvas)', color: 'var(--color-ink)',
+                  border: '1px solid var(--color-hairline)', borderRadius: 'var(--radius-sm)', padding: '16px 18px', display: 'flex', alignItems: 'center', gap: 14, boxShadow: 'rgba(1,1,32,.18) 0 18px 40px' } },
+                  h('span', { style: { width: 40, height: 40, borderRadius: 'var(--radius-sm)', background: 'var(--gradient-brand)', flex: '0 0 auto' } }),
+                  h('div', null,
+                    h('div', { style: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 16 } }, '14 hrs / week saved'),
+                    h('div', { className: 'mono-eyebrow' }, 'After workflow automation')))))))));
   }
 
   /* ---------------- SOCIAL PROOF ---------------- */
