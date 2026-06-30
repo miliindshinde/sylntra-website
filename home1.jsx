@@ -46,26 +46,15 @@
                 position: 'absolute', inset: '-10%', background: 'var(--gradient-brand)',
                 filter: 'blur(80px)', opacity: 0.13, borderRadius: '50%', pointerEvents: 'none' } }),
               h('div', { style: { display: 'flex', flexDirection: 'column', gap: 'var(--space-lg)', position: 'relative' } },
-                h(ImageSlot, { id: 'home-hero', placeholder: 'Drop a hero image \u2014 team / workspace', ratio: '3 / 4', radius: 10,
-                  fit: 'contain', src: 'assets/images/founder/milind-shinde.webp' }),
+                h('img', { src: 'assets/images/founder/milind-shinde.webp',
+                  alt: 'Milind Shinde, Founder of Sylntra',
+                  className: 'hero-portrait' }),
                 h('div', { style: { background: 'var(--color-canvas)', color: 'var(--color-ink)',
                   border: '1px solid var(--color-hairline)', borderRadius: 'var(--radius-sm)', padding: '16px 18px', display: 'flex', alignItems: 'center', gap: 14, boxShadow: 'rgba(1,1,32,.18) 0 18px 40px' } },
                   h('span', { style: { width: 40, height: 40, borderRadius: 'var(--radius-sm)', background: 'var(--gradient-brand)', flex: '0 0 auto' } }),
                   h('div', null,
                     h('div', { style: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 16 } }, '14 hrs / week saved'),
                     h('div', { className: 'mono-eyebrow' }, 'After workflow automation')))))))));
-  }
-
-  /* ---------------- SOCIAL PROOF ---------------- */
-  function LogoStrip() {
-    const names = ['Northwind', 'Meridian', 'Oakbridge', 'Lumen Co', 'Vantage', 'Cedar & Co'];
-    return h('section', { className: 'surface-light band-tight' },
-      h('div', { className: 'container' },
-        h(Reveal, null, h('p', { className: 'mono-eyebrow', style: { textAlign: 'center', marginBottom: 28 } },
-          'Trusted by owners who\u2019d rather run the business than the software')),
-        h(Reveal, { delay: 100 },
-          h('div', { style: { display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '36px 56px', alignItems: 'center' } },
-            names.map((n) => h('span', { key: n, style: { fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 22, letterSpacing: '-0.02em', color: '#bdbdc7' } }, n))))));
   }
 
   /* ---------------- PAIN POINTS ---------------- */
@@ -162,5 +151,5 @@
               h('p', { className: 'body' }, s[2])))))));
   }
 
-  window.HOME = Object.assign(window.HOME || {}, { Hero, LogoStrip, Pains, WhyFail, Approach, Services });
+  window.HOME = Object.assign(window.HOME || {}, { Hero, Pains, WhyFail, Approach, Services });
 })();

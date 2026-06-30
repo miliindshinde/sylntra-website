@@ -147,6 +147,9 @@ body {
 image-slot { display: block; background: #f3f3f5; }
 .surface-dark image-slot, .slot-dark image-slot { background: #11112b; }
 
+/* hero portrait — natural dimensions, never cropped */
+.hero-portrait { display: block; width: 100%; height: auto; border-radius: 10px; }
+
 /* --- Tweak-driven page modes -------------------------------- */
 .atmo { transition: opacity 300ms ease; }
 body.accent-subtle .atmo { opacity: 0.13 !important; }
@@ -176,7 +179,7 @@ body.motion-off .reveal, body.motion-off .reveal-scale { opacity: 1 !important; 
 @media (max-width: 960px) {
   .hero-grid, .grid-collapse { grid-template-columns: 1fr !important; }
   .process-row { grid-template-columns: 1fr !important; gap: var(--space-lg) !important; }
-  .slot-dark image-slot { max-height: 70vh; }
+  .hero-portrait { max-height: 70vh; width: auto; max-width: 100%; margin: 0 auto; }
 }
 @media (max-width: 880px) {
   .nav-links, .nav-actions .nav-cta-desktop, .nav-actions .nav-secondary { display: none; }
